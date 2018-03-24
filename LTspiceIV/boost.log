@@ -1,0 +1,23 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\boost.asc
+
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.114787 to 0.114787
+
+Date: Sun Sep 24 12:40:00 2017
+Total elapsed time: 18.158 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2930310
+traniter = 2930301
+tranpoints = 977138
+accept = 704850
+rejected = 272289
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 444 bytes object code size  2.1/1.9/[1.7]
+Matrix Compiler2: 740 bytes object code size  1.9/2.3/[1.8]
+
+

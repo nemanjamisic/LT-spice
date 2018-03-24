@@ -1,0 +1,23 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\examples\jigs\8616.asc
+
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u1:4)
+Ignoring empty pin current: Ix(u1:5)
+Ignoring empty pin current: Ix(u1:7)
+Ignoring empty pin current: Ix(u1:10)
+Ignoring empty pin current: Ix(u1:14)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(u1:20)
+Ignoring empty pin current: Ix(u1:23)
+Ignoring empty pin current: Ix(u1:25)
+Ignoring empty pin current: Ix(u1:27)
+Ignoring empty pin current: Ix(u1:4)
+Ignoring empty pin current: Ix(u1:5)
+Ignoring empty pin current: Ix(u1:7)
+Ignoring empty pin current: Ix(u1:10)
+Ignoring empty pin current: Ix(u1:14)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(u1:20)
+Ignoring empty pin current: Ix(u1:23)
+Ignoring empty pin current: Ix(u1:25)
+Ignoring empty pin current: Ix(u1:27)

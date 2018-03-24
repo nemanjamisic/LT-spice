@@ -1,0 +1,22 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\Napajanje.asc
+
+.OP point found by inspection.
+
+Date: Mon Oct 16 19:23:55 2017
+Total elapsed time: 1.233 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 106093
+traniter = 106093
+tranpoints = 24091
+accept = 16092
+rejected = 7999
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 284 bytes object code size  2.0/1.9/[1.8]
+Matrix Compiler2: 369 bytes object code size  1.8/1.8/[1.7]
+
+

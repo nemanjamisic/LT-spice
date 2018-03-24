@@ -1,0 +1,43 @@
+Title: * C:\Program Files\LTC\LTspiceIV\paraprase.asc
+Date: Sat Apr 22 00:32:18 2017
+Plotname: Operating Point
+Flags: real
+No. Variables: 28
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: u1 1 2 3
+Backannotation: u2 1 2 3
+Backannotation: u1:1 1 2 3
+Backannotation: u2:1 1 2 3
+Variables:
+	0	V(n003)	voltage
+	1	V(n005)	voltage
+	2	V(n004)	voltage
+	3	V(n002)	voltage
+	4	V(n006)	voltage
+	5	V(ulaz)	voltage
+	6	V(n001)	voltage
+	7	V(izlaz2)	voltage
+	8	V(izlaz1)	voltage
+	9	I(C3)	device_current
+	10	I(C2)	device_current
+	11	I(C1)	device_current
+	12	I(R3)	device_current
+	13	I(R2)	device_current
+	14	I(R8)	device_current
+	15	I(R7)	device_current
+	16	I(R6)	device_current
+	17	I(R5)	device_current
+	18	I(R4)	device_current
+	19	I(R1)	device_current
+	20	I(V2)	device_current
+	21	I(V1)	device_current
+	22	Ix(u1:1)	subckt_current
+	23	Ix(u1:2)	subckt_current
+	24	Ix(u1:3)	subckt_current
+	25	Ix(u2:1)	subckt_current
+	26	Ix(u2:2)	subckt_current
+	27	Ix(u2:3)	subckt_current
+Binary:
+¤õ•×*ZX@»­@æ6ŠñC%ÈB¥.Š0§ÿyCGäƒ-Á0-Ãî›%¶æ¤„ß,¥ÖÛ.:Ò5:¸.Š0¶æ$„ß,%çÛ.:Ò5:¤$'÷V²º¥.Š0Ò5:¸.Š°Ò5ºçÛ.:\Í‰°ÖÛ.º

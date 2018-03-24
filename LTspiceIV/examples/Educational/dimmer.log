@@ -1,0 +1,28 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\examples\Educational\dimmer.asc
+
+.OP point found by inspection.
+.step rdim=1000
+.step rdim=50000
+.step rdim=100000
+.step rdim=200000
+.step rdim=300000
+.step rdim=325000
+
+Date: Sat Apr 22 22:01:42 2017
+Total elapsed time: 16.348 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 68537
+traniter = 68537
+tranpoints = 17289
+accept = 12625
+rejected = 4664
+matrix size = 15
+fillins = 2
+solver = Normal
+Matrix Compiler1: 1.43 KB object code size  1.9/1.9/[1.5]
+Matrix Compiler2: 1.33 KB object code size  1.6/1.8/[1.6]
+
+

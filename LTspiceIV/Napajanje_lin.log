@@ -1,0 +1,28 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\Napajanje_lin.asc
+
+.OP point found by inspection.
+.step val=800
+.step val=951
+.step val=1102
+.step val=1253
+.step val=1404
+.step val=1500
+
+Date: Sat Nov 04 22:01:52 2017
+Total elapsed time: 6.208 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 98583
+traniter = 98583
+tranpoints = 21613
+accept = 14613
+rejected = 7000
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1:      19 opcodes  1.5/1.4/[1.4]
+Matrix Compiler2: 442 bytes object code size  1.4/1.4/[1.4]
+
+

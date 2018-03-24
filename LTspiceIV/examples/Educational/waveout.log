@@ -1,0 +1,23 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\examples\Educational\waveout.asc
+
+WARNING: Less than two connections to node SYN.  This node is used by B1.
+.OP point found by inspection.
+
+Date: Sat Apr 22 22:12:49 2017
+Total elapsed time: 0.594 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 22020
+traniter = 22020
+tranpoints = 9107
+accept = 5486
+rejected = 3621
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1: 156 bytes object code size  1.7/1.6/[1.6]
+Matrix Compiler2: 358 bytes object code size  1.7/1.7/[1.6]
+
+

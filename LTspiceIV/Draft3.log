@@ -1,0 +1,80 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\Draft3.asc
+
+WARNING: Node IZLAZ1 is floating.
+
+WARNING: Less than two connections to node IZLAZ1.  This node is used by C2.
+WARNING: Less than two connections to node N006.  This node is used by R5.
+Direct Newton iteration for .op point succeeded.
+N-Period=1
+Fourier components of V(ulaz)
+DC component:-0.000222066
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	6.835e-01	1.000e+00	    0.37°	    0.00°
+    2   	2.000e+03	4.233e-04	6.193e-04	  -55.77°	  -56.14°
+    3   	3.000e+03	1.443e-02	2.112e-02	 -163.86°	 -164.23°
+    4   	4.000e+03	3.653e-04	5.345e-04	  -22.41°	  -22.78°
+    5   	5.000e+03	7.097e-04	1.038e-03	  -93.02°	  -93.39°
+    6   	6.000e+03	2.833e-04	4.145e-04	    8.80°	    8.43°
+    7   	7.000e+03	2.418e-04	3.537e-04	  -63.84°	  -64.21°
+    8   	8.000e+03	1.957e-04	2.863e-04	   35.34°	   34.97°
+    9   	9.000e+03	1.010e-03	1.478e-03	  -73.89°	  -74.26°
+Total Harmonic Distortion: 2.122017%(2.142610%)
+
+
+N-Period=1
+Fourier components of V(izlaz1)
+DC component:-0.0343248
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	7.957e+00	1.000e+00	    0.09°	    0.00°
+    2   	2.000e+03	2.174e-02	2.733e-03	  -81.82°	  -81.91°
+    3   	3.000e+03	1.669e-01	2.098e-02	 -163.79°	 -163.88°
+    4   	4.000e+03	4.249e-03	5.340e-04	   -3.95°	   -4.04°
+    5   	5.000e+03	8.586e-03	1.079e-03	  -89.24°	  -89.33°
+    6   	6.000e+03	4.116e-03	5.172e-04	    2.80°	    2.71°
+    7   	7.000e+03	3.249e-03	4.083e-04	  -54.46°	  -54.55°
+    8   	8.000e+03	2.804e-03	3.524e-04	   25.43°	   25.34°
+    9   	9.000e+03	1.202e-02	1.510e-03	  -71.54°	  -71.63°
+Total Harmonic Distortion: 2.125345%(2.146314%)
+
+
+N-Period=1
+Fourier components of V(izlaz2)
+DC component:-0.00262449
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	7.616e+00	1.000e+00	 -179.66°	    0.00°
+    2   	2.000e+03	7.460e-02	9.795e-03	   92.11°	  271.77°
+    3   	3.000e+03	1.599e-01	2.099e-02	   17.04°	  196.71°
+    4   	4.000e+03	6.222e-03	8.170e-04	 -134.52°	   45.15°
+    5   	5.000e+03	9.059e-03	1.190e-03	   99.31°	  278.97°
+    6   	6.000e+03	6.013e-03	7.896e-04	  174.20°	  353.87°
+    7   	7.000e+03	3.820e-03	5.017e-04	  133.39°	  313.05°
+    8   	8.000e+03	4.202e-03	5.518e-04	 -169.19°	   10.47°
+    9   	9.000e+03	1.175e-02	1.543e-03	  110.36°	  290.03°
+Total Harmonic Distortion: 2.328528%(2.348245%)
+
+
+
+Date: Fri Apr 21 23:46:46 2017
+Total elapsed time: 12.121 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 900037
+traniter = 900026
+tranpoints = 400013
+accept = 240020
+rejected = 159993
+matrix size = 18
+fillins = 8
+solver = Normal
+Matrix Compiler1: 1.85 KB object code size  2.4/1.9/[1.6]
+Matrix Compiler2:     128 opcodes  1.8/[1.7]/1.8
+
+

@@ -1,0 +1,22 @@
+Circuit: * C:\Program Files\LTC\LTspiceIV\tranzistor.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Jan 20 00:37:44 2018
+Total elapsed time: 2.278 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 400030
+traniter = 400024
+tranpoints = 200013
+accept = 120020
+rejected = 79993
+matrix size = 9
+fillins = 0
+solver = Alternate
+Matrix Compiler1: 636 bytes object code size  1.8/1.5/[1.4]
+Matrix Compiler2: 783 bytes object code size  1.6/1.7/[1.5]
+
+

@@ -1,0 +1,189 @@
+* triode models have parm for degradation over life .PARAM EMISSIONRANGE = 1
+
+.SUBCKT TETRODE A S G K
+* dummy
+.ENDS TETRODE
+
+
+.SUBCKT 2E24 A S G K
+Eat	at	0	VALUE={.636*ATAN(V(A,K)/8.5)}					; /# is sharpness of knee
+Egsg	gsg	0	VALUE={LIMIT(V(S,K)/1+PWRS(V(G,K),0.87)/.09+V(A,K)/22,0,1E6)}	; s,k/#=peak current  g,k/# is mu  a,k/# is plate res
+Egss	gss	0	VALUE={LIMIT(V(S,K)/1.5+PWRS(V(G,K),1.0)/.09+V(A,K)/80,0,1E6)}	; separating gsg,gss allows cutoff to be different
+Egs2	gs2	0	VALUE={PWRS(V(gsg),1.45)}
+Egs3	gs3	0	VALUE={PWRS(V(gss),1.45)}
+Ecath 	cc    	0 	VALUE={V(gs2)*V(at)+V(gs3)*V(at)}
+Ga     	A     	K     	VALUE={3.05E-5*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={2.0E-5*V(sc)*LIMIT(V(S,K),0,10)/10}
+Gg	G	K	VALUE={PWR(LIMIT(V(G,K)+1,0,1E6),1.5)*50E-6}
+Cg1	G	K	8.5p
+Cak	A	K	6.5p
+Cg1a	G	A	1.1p
+.ENDS 2E24
+
+.SUBCKT 6146 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/10)}
+Eme	me	0	VALUE={LIMIT{V(A,K),0,10000}/130}
+Emu	mu	0	VALUE={PWRS(V(G,K),1-(LIMIT{-V(G,K),30,9999}-30)/2000)}
+Egs	gs	0	VALUE={LIMIT{V(A,K)/10+V(S,K)*4.5+V(mu)*19,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)*16E-6}
+Ecath  	cc    	0 	VALUE={LIMIT{V(gs2)*V(at),0,V(me)}}
+Esd	sd	0	VALUE={LIMIT{V(gs2)*V(at)-V(me),0,99999}}
+Ga     	A     	K     	VALUE={V(cc)}
+Escrn	sc	0	VALUE={2.5E-4*PWRS(V(S,K),1.5)*V(gs2)*(1.1-V(at))+V(sd)}
+Gs     	S     	K	VALUE={V(sc)}
+Gg	G	K	VALUE={PWR(LIMIT{V(G,K)+1,0,1E6},1.5)*(1.25-V(at))*870E-6}
+Cg1	G	K	13.0p
+Cak	A	K	8.5p
+Cg1a	G	A	0.24p
+.ENDS 
+
+.SUBCKT 6BM8_ A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/15)}
+Egs	gs	0	VALUE={LIMIT{V(S,K)/7+V(G,K)*1.3+V(A,K)/700,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.24)}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(at)}
+Ga     	A     	K     	VALUE={3.45E-3*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={3.7E-3*V(sc)*LIMIT{V(S,K),0,10}/10}
+Cg1	G	K	9.6p
+Cak	A	K	9.3p
+Cg1a	G	A	0.35p
+.ENDS 6BM8_
+
+.SUBCKT 6BQ5_EL84 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/15)}
+Egs	gs	0	VALUE={LIMIT(V(S,K)/19+V(G,K)+V(A,K)/1400,0,1E6)}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(at)}
+Ga     	A     	K     	VALUE={3.2E-3*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={2.0E-3*V(sc)*LIMIT(V(S,K),0,10)/10}
+Gg	G	K	VALUE={PWR(LIMIT(V(G,K)+1,0,1E6),1.5)*50E-6}
+Cg1	G	K	10.8p
+Cak	A	K	6.5p
+Cg1a	G	A	0.5p
+.ENDS 6BQ5
+
+.SUBCKT 6CA7_EL34 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/23)}
+Egs	gs	0	VALUE={LIMIT(V(S,K)/9.3+V(G,K)*0.95,0,1E6)}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(at)}
+Ga     	A     	K     	VALUE={1.86E-3*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={1.518E-3*V(sc)*LIMIT(V(S,K),0,10)/10}
+Gg	G	K	VALUE={PWR(LIMIT(V(G,K)+1,0,1E6),1.5)*50E-6}
+Cg1	G	K	15.4p
+Cak	A	K	8.4p
+Cg1a	G	A	1.1p
+.ENDS 6CA7
+
+.SUBCKT 6KG6_EL509 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/20)}
+Eme	me	0	VALUE={PWR(LIMIT{V(A,K),0,10000},1.5)/17}
+Emu	mu	0	VALUE={PWRS(V(G,K),1-(LIMIT{-V(G,K),5,9999}-5)/1150)}
+Egs	gs	0	VALUE={LIMIT{V(S,K)/19+V(mu)/4.3+V(A,K)/800,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)}
+Ecath  	cc    	0 	VALUE={LIMIT{V(gs2)*V(at),0,V(me)}}
+Elim	el	0	VALUE={LIMIT{V(gs2)*V(at)-V(cc),0,99999}}
+Ga     	A     	K     	VALUE={6E-2*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))+1.2*V(el)}
+Gs     	S     	K	VALUE={1.2E-2*V(sc)*LIMIT{V(S,K),0,10}/10}
+Gg	G	K	VALUE={PWR(LIMIT{V(G,K)+1,0,1E6},1.5)*50E-6}
+Cg1	G	K	37p
+Cak	A	K	18.5p
+Cg1a	G	A	2.5p
+.ENDS 
+
+.SUBCKT 6L6 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/5)}
+Eme	me	0	VALUE={PWR(LIMIT{V(A,K),0,2000},1.5)/1750}
+Emu	mu	0	VALUE={PWRS(V(G,K),1-(LIMIT{-V(G,K),30,9999}-30)/2000)}
+Egs	gs	0	VALUE={LIMIT{V(A,K)/2.5+V(S,K)*15.15+V(mu)*134,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)*0.8E-6}
+Ecath  	cc    	0 	VALUE={LIMIT{V(gs2)*V(at),0,V(me)}}
+Ga     	A     	K     	VALUE={V(cc)}
+Escrn	sc	0	VALUE={0.76*V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={V(sc)*LIMIT{V(S,K),0,10}/10}
+Gg	G	K	VALUE={PWR(LIMIT{V(G,K)+1,0,1E6},1.5)*(1.25-V(at))*650E-6}
+Cg1	G	K	5.0p
+Cgs	G	S	5.0p
+Cak	A	K	6.5p
+Cg1a	G	A	0.6p
+.ENDS 
+
+.SUBCKT 6V6 P S G K
+Esp 	2  	0  	VALUE={V(P,K)+13.49*V(S,K)+130.4*V(G,K)}
+E1  	3  	2  	VALUE={5.521E-7*(PWR(V(2),1.5)+PWRS(V(2),1.5))/2}
+E2  	3  	4  	VALUE={5.521E-7*PWR(13.49*V(S,K),1.5)*V(P,K)/25}
+E3  	5  	4  	VALUE={(1-V(4,2)/ABS(V(4,2)+0.001))/2}
+R1  	5  	0  	1.0K
+Gk  	S  	K  	VALUE={V(3,2)}
+Gp  	P  	S  	VALUE={0.92*(V(3,4)*(1-V(5,4))+V(3,2)*V(5,4))}
+Cgk 	G  	K  	4.5P
+Cgs 	G  	S  	4.5P
+Cgp 	G  	P  	0.7P
+Cpk 	P 	K 	7.5P
+.ENDS 6V6GTA
+
+.SUBCKT D3a A S G K
+Eat	at	0	VALUE={.636*ATAN(V(A,K)/20)}					; /# is sharpness of knee
+Egsg	gsg	0	VALUE={LIMIT(V(S,K)/1+PWRS(V(G,K),1)/.0146+V(A,K)/80000,0,1E6)}	; s,k/#=peak current  g,k/# is mu  a,k/# is plate res
+Egss	gss	0	VALUE={LIMIT(V(S,K)/10000000000+PWRS(V(G,K),1.0)/.03+V(A,K)/80,0,1E6)}	; separating gsg,gss allows cutoff to be different
+Egs2	gs2	0	VALUE={PWRS(V(gsg),1.45)}
+Egs3	gs3	0	VALUE={PWRS(V(gss),1.45)}
+Ecath 	cc    	0 	VALUE={V(gs2)*V(at)+V(gs3)*V(at)}
+Ga     	A     	K     	VALUE={5.4E-5*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={5.0E-5*V(sc)*LIMIT(V(S,K),0,10)/10}
+Gg	G	K	VALUE={PWR(LIMIT(V(G,K)+1,0,1E6),1.5)*50E-6}
+Cg1	G	K	8.5p
+Cak	A	K	6.5p
+Cg1a	G	A	1.1p
+.ENDS D3a
+
+.SUBCKT EF86 A S G K
+Emu	mu	0	VALUE={LIMIT{V(G,K),-3,999}+LIMIT{V(G,K)+3,-999,0}*0.714}
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/15)}
+Egs	gs	0	VALUE={LIMIT{V(S,K)/27.5+V(mu)*1.32+1,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(at)}
+Ga     	A     	K     	VALUE={5.83E-4*V(cc)}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={0.5E-3*V(sc)}
+Cg1	G	K	3.8p
+Cak	A	K	5.3p
+Cg1a	G	A	0.05p
+.ENDS 
+
+.SUBCKT   KT88 P S G K
+Esp 2  0  VALUE={V(P,K)+24.49*V(S,K)+189.9*V(G,K)}
+E1  3  2  VALUE={8.301E-7*(PWR(V(2),1.5)+PWRS(V(2),1.5))/2}
+E2  3  4  VALUE={8.301 E-7*PWR(24.49*V(S,K),1.5)*V(P,K)/40}
+E3  5  4  VALUE={(1-V(4,2)/ABS(V(4,2)+0.001))/2}
+R1  5  0  1.0K
+Gk  S  K  VALUE={V(3,2)}
+Gp  P  S  VALUE={0.95*(V(3,4)*(1-V(5,4))+V(3,2)*V(5,4))}
+Cgk G  K  8.0P
+Cgs G  S  8.0P
+Cgp G  P  1.2P
+Cpk P  K  12P
+.ENDS KT88
+
+.SUBCKT SV83 A S G K
+Eat	at	0	VALUE={0.636*ATAN(V(A,K)/15)}
+Egs	gs	0	VALUE={LIMIT{V(S,K)/19+V(G,K)*1.2+V(A,K)/1400,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs),1.5)*1.6}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(at)}
+Ga     	A     	K     	VALUE={LIMIT{3.5E-3*V(cc),0,9999}}
+Escrn	sc	0	VALUE={V(gs2)*(1.1-V(at))}
+Gs     	S     	K	VALUE={2.0E-3*V(sc)*LIMIT{V(S,K),0,10}/10}
+Gg	G	K	VALUE={PWR(LIMIT{V(G,K)+1,0,1E6},1.5)*50E-6}
+Cg1	G	K	13.5p
+Cak	A	K	7.0p
+Cg1a	G	A	0.07p
+.ENDS 
+
+
+
